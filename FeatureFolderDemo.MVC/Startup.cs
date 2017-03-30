@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.AspNetCore.Mvc.Razor;
 
 namespace FeatureFolderDemo.MVC
 {
@@ -28,9 +27,6 @@ namespace FeatureFolderDemo.MVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<RazorViewEngineOptions>(options => 
-                options.ViewLocationExpanders.Add(new FeatureViewLocationExpander()));
-
             // Add framework services.
             services.AddMvc();
         }
@@ -57,7 +53,7 @@ namespace FeatureFolderDemo.MVC
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=HomePage}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
