@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  featurefolderdemo.mvc:
+    image: featurefolderdemo.mvc
+    build:
+      context: ./FeatureFolderDemo.MVC
+      dockerfile: Dockerfile
